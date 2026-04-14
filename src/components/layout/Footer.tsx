@@ -23,7 +23,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <a href="#home" className="text-2xl font-extrabold text-gradient inline-block mb-4 tracking-tight">
+            <a href="#home" className="text-2xl font-extrabold text-primmary inline-block mb-4 tracking-tight">
               SV
             </a>
             <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">

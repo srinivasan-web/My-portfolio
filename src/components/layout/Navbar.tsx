@@ -39,7 +39,7 @@ export const Navbar = () => {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <motion.a
           href="#home"
-          className="text-2xl font-extrabold text-gradient tracking-tight"
+          className="text-2xl font-extrabold  tracking-tight"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -48,7 +48,7 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
@@ -68,23 +68,9 @@ export const Navbar = () => {
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 gradient-primary transition-all duration-300 group-hover:w-full rounded-full" />
               </motion.a>
-            )
-          ))}
-          <ThemeToggle />
-          {user && isAdmin ? (
-            <Link to="/admin">
-              <Button variant="default" size="sm" className="gradient-primary text-primary-foreground border-0 font-semibold">
-                Admin
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/auth">
-              <Button variant="outline" size="sm" className="font-medium">
-                <LogIn className="mr-2 h-4 w-4" />
-                Login
-              </Button>
-            </Link>
+            ),
           )}
+          <ThemeToggle />
         </div>
 
         <Button
@@ -107,7 +93,7 @@ export const Navbar = () => {
             className="md:hidden glass-strong border-t border-border"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link, index) =>
                 link.isRoute ? (
                   <Link
                     key={link.name}
@@ -129,15 +115,18 @@ export const Navbar = () => {
                   >
                     {link.name}
                   </motion.a>
-                )
-              ))}
+                ),
+              )}
               <div className="flex items-center justify-between pt-2 border-t border-border">
                 <span className="text-sm text-muted-foreground">Theme</span>
                 <ThemeToggle />
               </div>
               {user && isAdmin ? (
                 <Link to="/admin" onClick={() => setIsOpen(false)}>
-                  <Button variant="default" className="gradient-primary text-primary-foreground border-0 mt-2 w-full font-semibold">
+                  <Button
+                    variant="default"
+                    className="gradient-primary text-primary-foreground border-0 mt-2 w-full font-semibold"
+                  >
                     Admin Dashboard
                   </Button>
                 </Link>
