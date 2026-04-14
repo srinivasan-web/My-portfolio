@@ -1,0 +1,10 @@
+project_id = "ljqwvjjbbrmhpifxwiwf"
+
+[functions.send-contact-email]
+verify_jwt = false
+
+[functions.ai-assistant]
+verify_jwt = false
+
+[functions.github-activity]
+verify_jwt = false
