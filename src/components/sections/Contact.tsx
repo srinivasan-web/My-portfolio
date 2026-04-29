@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@example.com",
-    href: "mailto:hello@example.com",
+    value: "udcu23s1059@gmail.com",
+
   },
   {
     icon: Phone,
     title: "Phone",
     value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+ 
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "San Francisco, CA",
+    value: "Trichy, TamilNadu",
     href: "#",
   },
 ];
@@ -141,7 +141,7 @@ export const Contact = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
           >
-            Let's <span className="text-gradient">Connect</span>
+            Let's <span className="text-primary">Connect</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

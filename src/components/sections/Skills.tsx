@@ -2,23 +2,85 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 const skills = [
-  { name: "React / Next.js", level: 95, category: "Frontend", color: "from-primary to-info" },
-  { name: "React Native", level: 90, category: "Mobile", color: "from-info to-primary" },
-  { name: "Flutter / Dart", level: 85, category: "Mobile", color: "from-primary to-info" },
-  { name: "TypeScript", level: 92, category: "Language", color: "from-info to-primary" },
-  { name: "Node.js / Express", level: 85, category: "Backend", color: "from-primary to-info" },
-  { name: "PostgreSQL / MongoDB", level: 88, category: "Database", color: "from-info to-primary" },
-  { name: "Tailwind CSS", level: 95, category: "Styling", color: "from-primary to-info" },
-  { name: "Docker / AWS", level: 75, category: "DevOps", color: "from-info to-primary" },
+  {
+    name: "React / Next.js",
+    level: 95,
+    category: "Frontend",
+    color: "from-primary to-info",
+  },
+  {
+    name: "React Native",
+    level: 90,
+    category: "Mobile",
+    color: "from-info to-primary",
+  },
+
+  {
+    name: "TypeScript",
+    level: 92,
+    category: "Language",
+    color: "from-info to-primary",
+  },
+  {
+    name: "Node.js / Express",
+    level: 85,
+    category: "Backend",
+    color: "from-primary to-info",
+  },
+  {
+    name: "PostgreSQL / MongoDB",
+    level: 88,
+    category: "Database",
+    color: "from-info to-primary",
+  },
+  {
+    name: "Tailwind CSS",
+    level: 95,
+    category: "Styling",
+    color: "from-primary to-info",
+  },
+  {
+    name: "Docker / AWS",
+    level: 75,
+    category: "DevOps",
+    color: "from-info to-primary",
+  },
 ];
 
 const technologies = [
-  "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Flutter",
-  "Dart", "Node.js", "Python", "PostgreSQL", "MongoDB", "Firebase",
-  "Redis", "Docker", "AWS", "Git", "Figma", "Tailwind CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "React Native",
+  "Flutter",
+  "Dart",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase",
+  "Redis",
+  "Docker",
+  "AWS",
+  "Git",
+  "Figma",
+  "Tailwind CSS",
 ];
 
-const SkillBar = ({ name, level, category, index, color }: { name: string; level: number; category: string; index: number; color: string }) => {
+const SkillBar = ({
+  name,
+  level,
+  category,
+  index,
+  color,
+}: {
+  name: string;
+  level: number;
+  category: string;
+  index: number;
+  color: string;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -27,7 +89,7 @@ const SkillBar = ({ name, level, category, index, color }: { name: string; level
     if (isInView) {
       const timer = setTimeout(() => {
         const interval = setInterval(() => {
-          setCurrentLevel(prev => {
+          setCurrentLevel((prev) => {
             if (prev >= level) {
               clearInterval(interval);
               return level;
@@ -42,8 +104,8 @@ const SkillBar = ({ name, level, category, index, color }: { name: string; level
   }, [isInView, level, index]);
 
   return (
-    <motion.div 
-      ref={ref} 
+    <motion.div
+      ref={ref}
       className="mb-5"
       initial={{ opacity: 0, x: -20 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -56,7 +118,9 @@ const SkillBar = ({ name, level, category, index, color }: { name: string; level
             {category}
           </span>
         </div>
-        <span className="text-primary font-bold text-sm tabular-nums">{currentLevel}%</span>
+        <span className="text-primary font-bold text-sm tabular-nums">
+          {currentLevel}%
+        </span>
       </div>
       <div className="h-2 bg-muted rounded-full overflow-hidden relative">
         <motion.div
@@ -65,7 +129,10 @@ const SkillBar = ({ name, level, category, index, color }: { name: string; level
           transition={{ duration: 1.2, delay: index * 0.1, ease: "easeOut" }}
           className={`h-full rounded-full relative bg-gradient-to-r ${color}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer" style={{ backgroundSize: "200% 100%" }} />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer"
+            style={{ backgroundSize: "200% 100%" }}
+          />
         </motion.div>
       </div>
     </motion.div>
@@ -86,7 +153,7 @@ export const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-16"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.4 }}
@@ -94,7 +161,7 @@ export const Skills = () => {
           >
             My Skills
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -102,7 +169,7 @@ export const Skills = () => {
           >
             Technical <span className=" text-primary">Expertise</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -132,7 +199,9 @@ export const Skills = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="glass p-6 rounded-2xl"
             >
-              <h3 className="text-lg font-semibold mb-6">Technologies I Work With</h3>
+              <h3 className="text-lg font-semibold mb-6">
+                Technologies I Work With
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (
                   <motion.span
@@ -155,14 +224,21 @@ export const Skills = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="p-6 rounded-2xl gradient-primary text-primary-foreground flex-1"
             >
-              <h4 className="font-bold mb-2 text-lg">Mobile Development</h4>
+              <h4 className="font-bold mb-2 text-lg">MERN Stack Development</h4>
               <p className="text-primary-foreground/85 text-sm leading-relaxed mb-4">
-                Specialized in building cross-platform mobile applications using 
-                React Native and Flutter for seamless iOS and Android experiences.
+                MERN Stack Developer with hands-on experience building
+                production-ready web applications using React.js, Node.js,
+                Express.js, and MongoDB. Developed end-to-end features including
+                secure REST APIs, role-based authentication, real-time
+                functionality with Socket.IO, and payment workflows using
+                Stripe.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["React Native", "Flutter", "iOS", "Android"].map((tech) => (
-                  <span key={tech} className="px-3 py-1 text-xs rounded-full bg-primary-foreground/15 text-primary-foreground font-medium backdrop-blur-sm">
+                {["React ", "Node.js", "MongooDB", "Express.js"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-xs rounded-full bg-primary-foreground/15 text-primary-foreground font-medium backdrop-blur-sm"
+                  >
                     {tech}
                   </span>
                 ))}

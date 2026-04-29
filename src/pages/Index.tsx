@@ -22,7 +22,7 @@ const Index = () => {
         <Projects />
         <Timeline />
         <GitHubActivity username="srinivasan-web"/>
-        <Testimonials />
+     
         <Contact />
         <Newsletter />
       </main>

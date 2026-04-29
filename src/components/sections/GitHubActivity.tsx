@@ -102,7 +102,7 @@ export const GitHubActivity = ({ username }: GitHubActivityProps) => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              GitHub <span className="text-gradient">Activity</span>
+              GitHub <span className="text-primary">Activity</span>
             </h2>
             <p className="text-muted-foreground mt-3">
               Loading latest repositories and stats...

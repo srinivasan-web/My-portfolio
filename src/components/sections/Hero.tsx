@@ -47,13 +47,6 @@ const socialLinks = [
   },
 ];
 
-const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered" },
-
-  { value: 30, suffix: "+", label: "Happy Clients" },
-  { value: 99, suffix: "%", label: "Success Rate" },
-];
-
 const roles = [
   "Full-Stack Developer",
   "React Specialist",
@@ -377,32 +370,6 @@ export const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Animated Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.0 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-8"
-            >
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.0 + i * 0.1 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  className="text-center p-3 rounded-xl glass cursor-default group"
-                >
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold  group-hover:animate-pulse">
-                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground font-medium mt-1">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -449,7 +416,7 @@ export const Hero = () => {
               {/* Multi-layer glow */}
               <div className="absolute inset-0 rounded-full gradient-primary blur-[100px] opacity-15 scale-150" />
               <div className="absolute inset-0 rounded-full bg-info/10 blur-[80px] scale-125 animate-pulse-subtle" />
-        
+
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{

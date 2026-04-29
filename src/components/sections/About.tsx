@@ -56,7 +56,7 @@ export const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.4 }}
@@ -64,7 +64,7 @@ export const About = () => {
           >
             About Me
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -81,37 +81,38 @@ export const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed"
             >
-              I'm a passionate full-stack developer with expertise in both web and mobile 
-              application development. Specializing in React, React Native, and Flutter, 
-              I transform ideas into powerful, user-centric applications.
+              I'm a passionate full-stack developer with expertise in both web
+              and mobile application development. Specializing in React, React
+              Native, and Flutter, I transform ideas into powerful, user-centric
+              applications.
             </motion.p>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed"
             >
-              My journey in tech spans front-end, back-end, and mobile development. 
-              I believe in continuous learning and staying at the forefront of 
-              technological innovation to deliver exceptional digital experiences.
+              My journey in tech spans front-end, back-end, and mobile
+              development. I believe in continuous learning and staying at the
+              forefront of technological innovation to deliver exceptional
+              digital experiences.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               className="grid grid-cols-3 gap-4 sm:gap-6"
             >
               {[
-                { value: "3+", label: "Years Experience" },
-                { value: "50+", label: "Projects Completed" },
-                { value: "30+", label: "Happy Clients" },
+                { value: "1", label: "Years Experience" },
+                { value: "30+", label: "Projects Completed" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -123,13 +124,15 @@ export const About = () => {
                   <div className="text-2xl sm:text-3xl md:text-4xl font-bold  mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -143,16 +146,24 @@ export const About = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="p-4 sm:p-6 rounded-2xl glass hover:shadow-elevated transition-all group"
               >
-                <motion.div 
+                <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1, type: "spring" }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.4 + index * 0.1,
+                    type: "spring",
+                  }}
                   className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-3 sm:mb-4 group-hover:shadow-glow transition-shadow`}
                 >
                   <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
                 </motion.div>
-                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-xs sm:text-sm">{item.description}</p>
+                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-xs sm:text-sm">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>

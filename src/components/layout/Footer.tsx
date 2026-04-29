@@ -32,6 +32,8 @@ export const Footer = () => {
           </div>
 
           <div>
+
+            
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
               {quickLinks.map((link) => (
