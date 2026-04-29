@@ -13,6 +13,7 @@ import multiple from "../../assets/multiple.png";
 import Ecommerce from "../../assets/Ecommerce.png";
 import QuizGenerator from "../../assets/QuizGenerator.png";
 import phone from "../../assets/phone.png";
+import food from "../../assets/food.png";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -65,17 +66,16 @@ const projects = [
   },
   {
     id: 3,
-    title: "FoodieGo",
+    title: "FoodDash",
     description:
-      "Flutter-based food delivery app with real-time order tracking, restaurant discovery, and seamless payment integration.",
+      "Full stack based food delivery app with real-time order tracking, restaurant discovery, and seamless payment integration.",
     fullDescription:
-      "FoodieGo is a premium food delivery experience built with Flutter for iOS and Android. Features include AI-powered restaurant recommendations, real-time GPS tracking of deliveries, multiple payment options including crypto, and a loyalty rewards system.",
+      "FoodieGo is a premium food delivery experience built with MERN stack. Features include AI-powered restaurant recommendations, real-time GPS tracking of deliveries, multiple payment options including crypto, and a loyalty rewards system.",
     category: "Mobile",
-    image:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
-    tags: ["Flutter", "Dart", "Firebase", "Google Maps"],
+    image: food,
+    tags: ["React", "Node.js", "Express.js", "MySql"],
     github: "https://github.com",
-    live: "",
+    live: "https://cozy-plate-safe.lovable.app",
     features: [
       "Real-time tracking",
       "AI recommendations",
