@@ -54,6 +54,7 @@ const roles = [
   "Full Stack with ai Integration",
   "UI/UX Enthusiast",
   "Cloud Architect",
+  "Backend Developer",
 ];
 
 const techBadges = [
